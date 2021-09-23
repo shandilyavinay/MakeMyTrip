@@ -18,15 +18,17 @@ public class TestCase_TC_10 {
     @BeforeClass
     public void getinstance() throws IOException {
         data = WebUtil.getExcelData("TC_10", "Sheet1");
+        driver=WebUtil.BrowserLaunch((String) data.get("BrowserName"));
+        System.out.println("HI");
+        WebUtil.OpenUrl((String) data.get("url"));
     }
 
+    
 
     @Test
     public void VerifyCheckbox() throws InterruptedException {
 
-        driver=WebUtil.BrowserLaunch((String) data.get("BrowserName"));
-        System.out.println("HI");
-        WebUtil.OpenUrl((String) data.get("url"));
+        
         HomePage homepage = PageFactory.initElements(driver, HomePage.class);
         homepage.clickOnLogin();
         LoginPage login = PageFactory.initElements(driver, LoginPage.class);

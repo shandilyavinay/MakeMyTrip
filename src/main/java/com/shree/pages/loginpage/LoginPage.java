@@ -12,7 +12,7 @@ public class LoginPage extends ORLoginPage {
 
     public void validLogin() throws InterruptedException {
         WebUtil.sendKeys(username, (String) data.get("username"));
-        Thread.sleep(3000);
+        Thread.sleep(9000);
         WebUtil.Click(continueButton);
         WebUtil.Click(continueButton);
         WebUtil.sendKeys(password, (String) data.get("password"));

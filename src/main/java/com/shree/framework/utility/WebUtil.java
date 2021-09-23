@@ -64,6 +64,12 @@ public class WebUtil {
     public static void OpenUrl(String url) {
 
         driver.get(url);
+        try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     public static Map getExcelData(String TestCaseId, String SheetName) throws IOException {
